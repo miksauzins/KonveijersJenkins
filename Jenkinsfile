@@ -79,8 +79,8 @@ def installDependencies() {
 def deployApp(String envName, String port) {
     echo "Deploying application to ${envName} environment on port ${port}..."
     git branch:'main', url: 'https://github.com/mtararujs/python-greetings'
-    sh 'pm2 delete greetings-app-${envName} & set "errorlevel=0"'
-    sh "pm2 start app.py --name greetings-app-${envName} --interpreter ./venv/bin/python -- --port ${port}"
+    sh 'pm2 delete greetings_${envName} & set "errorlevel=0"'
+    sh "pm2 start app.py --name greetings_${envName} --interpreter ./venv/bin/python -- --port ${port}"
 }
 
 def runTests(String envName) {

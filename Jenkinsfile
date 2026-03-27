@@ -1,9 +1,5 @@
 pipeline {
-    agent any
-    
-    tools {
-        nodejs 'Node-20' 
-    }
+    agent any 
 
     stages {
         stage('install-pip-deps') {
